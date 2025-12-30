@@ -5,13 +5,6 @@
 #include <vector>
 #include <string>
 
-// AST node fields:
-// - type: node type ("number","string","variable","binop","assign","cin","cout")
-// - name: identifier name (for variable, assign target, cin)
-// - value: literal value for number/string
-// - op: operator for binop
-// - left/right: child nodes
-// - line: source line number for errors
 struct ASTNode {
     std::string type;
     std::string name;

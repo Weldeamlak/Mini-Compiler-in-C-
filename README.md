@@ -1,8 +1,8 @@
-# Mini C-Like Compiler  
+#Mini C++ Compiler
 **Course Assignment – Compiler Construction**
 
-This project implements a small compiler for a simplified C-style language.  
-It includes all major compilation phases:
+This project implements a mini compiler for a subset of the C++ programming language, developed entirely using C++.
+It includes all major compilation phases as studied in the course:
 
 1. **Lexer (Scanner)**  
 2. **Parser (AST builder)**  
