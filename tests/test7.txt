@@ -1,0 +1,9 @@
+x = 10;
+y = "hi";
+cout(x + y);      
+
+cout(x * y);      
+
+z = 10 / 0;       
+cout(z);
+

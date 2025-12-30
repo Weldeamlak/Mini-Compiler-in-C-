@@ -1,0 +1,4 @@
+compiler
+compiler.exe
+*.exe
+*.o
