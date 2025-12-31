@@ -2,7 +2,7 @@
 #include "ir.h"
 #include <vector>
 #include <string>
-#include <unordered_set>
+#include <unordered_set>// tracking usied variable/temps
 #include <cstdlib>
 #include <cctype>
 
@@ -21,12 +21,6 @@ static long toLong(const std::string& s) {
     return std::strtol(s.c_str(), nullptr, 10);
 }
 
-// The optimizer performs:
-//  - local constant folding for arithmetic where both args are numbers
-//  - simple algebraic simplifications (add 0, mul 1, mul 0 -> 0)
-//  - removes unused temporaries (temps like tN not referenced later)
-//  - detects simple MOV chains and division-by-zero patterns
-//  - inserts textual optimization messages as IR comments (op starts with ";")
 std::vector<IRInstruction> Optimizer::optimize(const std::vector<IRInstruction>& ir) {
     std::vector<IRInstruction> folded;
     folded.reserve(ir.size());

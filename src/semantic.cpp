@@ -28,7 +28,7 @@ void SemanticAnalyzer::analyzeNode(ASTNode* node) {
         }
         return;
     }
-
+    // binary operation checks
     if (node->type == "binop") {
         analyzeNode(node->left);
         analyzeNode(node->right);
@@ -39,7 +39,7 @@ void SemanticAnalyzer::analyzeNode(ASTNode* node) {
         if (node->type == "cin" && !node->name.empty()) {
             declared[node->name] = true;
         }
-        analyzeNode(node->left);
+        analyzeNode(node->left);// output statement are checked to ensure the expression is semantically valid
         return;
     }
 }

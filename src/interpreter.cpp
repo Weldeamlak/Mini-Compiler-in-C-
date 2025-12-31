@@ -17,6 +17,7 @@ bool Interpreter::tryParseInt(const std::string& s, int& out) {
     }
 }
 
+// Evaluate an AST node and return the resulting value
 std::string Interpreter::eval(ASTNode* node) {
     if (!node) return "";
 

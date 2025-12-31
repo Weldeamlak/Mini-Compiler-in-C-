@@ -10,10 +10,9 @@ It includes all major compilation phases as studied in the course:
 4. **Intermediate Representation (IR) Generator**  
 5. **Optimizer**  
 6. **Code Generator**  
-7. **Interpreter (Execution of IR)**  
+7. **Interpreter (Optional,Execution of IR)**  
 
-The compiler supports both **file input (.txt)** and **interactive terminal mode**.
-
+The compiler supports both **file input (.txt)** 
 ---
 
 ## ✅ Features Implemented

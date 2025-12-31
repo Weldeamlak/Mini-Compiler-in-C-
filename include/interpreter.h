@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 
+// This class is responsible for interpreting the AST and executing the program.
 class Interpreter {
 private:
     std::unordered_map<std::string, std::string> variables;

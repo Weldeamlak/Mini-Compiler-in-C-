@@ -7,7 +7,7 @@
 class Lexer {
 private:
     std::string text;
-    size_t pos;
+    size_t pos; // tracks current position in the input text
     int line;
     char currentChar();
 

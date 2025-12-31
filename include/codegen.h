@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 
+// This class is responsible for generating assembly code from IR.
 class CodeGenerator {
 public:
     // Generate toy assembly text lines from IR and return them

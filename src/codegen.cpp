@@ -12,6 +12,7 @@ static bool isNumber(const std::string& s) {
     for (; i < s.size(); ++i) if (!std::isdigit(static_cast<unsigned char>(s[i]))) return false;
     return true;
 }
+// Check if a string is a quoted string (i.e., a string literal)
 static bool isQuotedString(const std::string& s) {
     return s.size() >= 2 && s.front() == '"' && s.back() == '"';
 }

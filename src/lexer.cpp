@@ -56,7 +56,7 @@ std::string Lexer::number() {
     }
     return result;
 }
-
+//identifier
 std::string Lexer::identifier() {
     std::string result;
     // allow letters, digits and underscore; identifiers may start with underscore

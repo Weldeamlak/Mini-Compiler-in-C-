@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+// Intermediate representation instruction
 struct IRInstruction {
     std::string op;
     std::string arg1;
@@ -12,6 +13,7 @@ struct IRInstruction {
     std::string result;
 };
 
+// Intermediate representation generator
 class IRGenerator {
 public:
     std::vector<IRInstruction> generate(const std::vector<ASTNode*>& ast);

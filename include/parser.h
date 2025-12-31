@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 
+// ASTNode represents a node in the abstract syntax tree
 struct ASTNode {
     std::string type;
     std::string name;
@@ -14,6 +15,7 @@ struct ASTNode {
     ASTNode* right;
     int line;
 
+    // Constructor for ASTNode
     ASTNode(std::string type,
             std::string name = "",
             std::string value = "",

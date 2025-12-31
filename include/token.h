@@ -25,7 +25,7 @@ struct Token {
     TokenType type;
     std::string value;
     int line;
-
+    
     Token(TokenType type, std::string value = "", int line = 0)
         : type(type), value(value), line(line) {}
 };

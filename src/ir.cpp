@@ -2,7 +2,7 @@
 #include "parser.h"
 #include <vector>
 #include <string>
-#include <sstream>
+#include <sstream> //
 #include <functional> // <--- added to fix std::function compile error
 
 // Helper to create temporary names
@@ -10,6 +10,7 @@ static std::string makeTemp(int n) {
     return std::string("t") + std::to_string(n);
 }
 
+//as input AST and IR as output
 std::vector<IRInstruction> IRGenerator::generate(const std::vector<ASTNode*>& nodes) {
     std::vector<IRInstruction> ir;
     int tmpCount = 1;
@@ -83,8 +84,6 @@ std::vector<IRInstruction> IRGenerator::generate(const std::vector<ASTNode*>& no
         if (stmt->type == "cout") {
             // evaluate expression and print either variable name or temp
             std::string rhs = genExpr(stmt->left);
-            // prefer printing variable names when the node was a variable: but genExpr produced a temp.
-            // To match common style: print the variable name if the expression was a variable node directly
             if (stmt->left && stmt->left->type == "variable") {
                 // print variable directly (LOAD would be emitted elsewhere)
                 ir.push_back(IRInstruction{"PRINT", stmt->left->name, "", ""});
@@ -100,7 +99,6 @@ std::vector<IRInstruction> IRGenerator::generate(const std::vector<ASTNode*>& no
             continue;
         }
 
-        // For any other statement type emit a comment to help traceability
         std::ostringstream note;
         note << "; UNHANDLED_STMT type=" << stmt->type << " line=" << stmt->line;
         ir.push_back(IRInstruction{note.str(), "", "", ""});

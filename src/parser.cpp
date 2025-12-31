@@ -6,6 +6,7 @@
 Parser::Parser(Lexer lexer) : lexer(lexer), currentToken(this->lexer.getNextToken()) {}
 
 // Consume current token if it matches type
+// eat() enforces grammar rules by validating a token
 void Parser::eat(TokenType type) {
     if (currentToken.type == type)
         currentToken = lexer.getNextToken();
